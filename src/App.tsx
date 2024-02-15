@@ -1,9 +1,10 @@
 import "./App.css";
+import AppCalendarInput from "./components/AppCalendarInput";
 
 function App() {
   return (
     <>
-      <div>test</div>
+      <AppCalendarInput label="Select date:" />
 
       <p className="read-the-docs">
         Click <a>here</a> to learn more
