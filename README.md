@@ -1,3 +1,1 @@
-# React CalenPlanner
-
-Customizable React calendar component
+# React Dynamic Layouts
