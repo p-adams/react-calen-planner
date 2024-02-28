@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./Modal.css";
 interface ModalProps {
   isOpen: boolean;
-  close?: () => {};
+  close?: () => void;
 }
 function Modal(props: ModalProps) {
   const [internalIsOpen, setInternalIsOpen] = useState(false);
