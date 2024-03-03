@@ -1,29 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Modal.css";
 interface ModalProps {
   isOpen: boolean;
-  close?: () => void;
-  dialogUI?: () => JSX.Element;
+  onClose?: () => void;
+  children?: JSX.Element;
 }
 function Modal(props: ModalProps) {
-  const [internalIsOpen, setInternalIsOpen] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(props.isOpen);
 
-  // Use external isOpen if provided, otherwise use internal state
-  const isOpen = props.isOpen !== undefined ? props.isOpen : internalIsOpen;
-
-  const close = () => {
-    // Call external close if provided, otherwise update internal state
-    if (props.close) {
-      props.close();
-    } else {
-      setInternalIsOpen(false);
-    }
+  const handleClose = () => {
+    setIsDialogOpen(false);
+    props.onClose?.();
   };
 
+  // Update dialog state if `isOpen` prop changes
+  useEffect(() => {
+    setIsDialogOpen(props.isOpen);
+  }, [props.isOpen]);
+
   return (
-    <dialog className="modal" open={isOpen} onClose={close}>
-      {props.dialogUI?.()}
-    </dialog>
+    <>
+      {isDialogOpen && (
+        <dialog open={isDialogOpen} onClose={handleClose}>
+          <button onClick={handleClose}>&times;</button>
+          {props.children}
+        </dialog>
+      )}
+    </>
   );
 }
 

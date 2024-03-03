@@ -2,14 +2,15 @@ import "./App.css";
 import Modal from "./components/Modal";
 import GridSystemExample from "./examples/GridSystem";
 import IndexCard from "./examples/IndexCard";
+import ModalExample from "./examples/Modal";
 
 function App() {
   return (
     <>
       <section>
-        <h1>Index Card</h1>
+        <h1>Grid System</h1>
         <div>
-          <IndexCard />
+          <GridSystemExample />
         </div>
       </section>
       <section>
@@ -21,16 +22,7 @@ function App() {
       <section>
         <h1>Modal</h1>
         <div>
-          <Modal
-            isOpen={false}
-            close={() => {}}
-            dialogUI={() => (
-              <div>
-                <button>cancel</button>
-                <button>accept</button>
-              </div>
-            )}
-          ></Modal>
+          <ModalExample />
         </div>
       </section>
 

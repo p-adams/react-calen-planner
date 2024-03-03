@@ -5,8 +5,8 @@ function ModalExample() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <>
-      <button>open</button>
-      <Modal isOpen={isOpen} close={() => setIsOpen(false)}></Modal>
+      <button onClick={() => setIsOpen(true)}>open</button>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}></Modal>
     </>
   );
 }
