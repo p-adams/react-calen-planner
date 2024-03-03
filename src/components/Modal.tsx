@@ -3,6 +3,7 @@ import "./Modal.css";
 interface ModalProps {
   isOpen: boolean;
   close?: () => void;
+  dialogUI?: () => JSX.Element;
 }
 function Modal(props: ModalProps) {
   const [internalIsOpen, setInternalIsOpen] = useState(false);
@@ -19,7 +20,11 @@ function Modal(props: ModalProps) {
     }
   };
 
-  return <dialog className="modal" open={isOpen} onClose={close}></dialog>;
+  return (
+    <dialog className="modal" open={isOpen} onClose={close}>
+      {props.dialogUI?.()}
+    </dialog>
+  );
 }
 
 export default Modal;

@@ -1,4 +1,5 @@
 import "./App.css";
+import Modal from "./components/Modal";
 import GridSystemExample from "./examples/GridSystem";
 import IndexCard from "./examples/IndexCard";
 
@@ -12,9 +13,24 @@ function App() {
         </div>
       </section>
       <section>
-        <h1>Grid System</h1>
+        <h1>Index Card</h1>
         <div>
-          <GridSystemExample />
+          <IndexCard />
+        </div>
+      </section>
+      <section>
+        <h1>Modal</h1>
+        <div>
+          <Modal
+            isOpen={false}
+            close={() => {}}
+            dialogUI={() => (
+              <div>
+                <button>cancel</button>
+                <button>accept</button>
+              </div>
+            )}
+          ></Modal>
         </div>
       </section>
 
