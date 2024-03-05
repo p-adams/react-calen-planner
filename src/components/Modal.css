@@ -1,10 +1,13 @@
 dialog {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .dialog-content {
   display: flex;
 }
-.dialog-actions .close-button {
-  border: 1px solid red;
+.dialog-actions {
+  display: flex;
+  justify-content: end;
 }
