@@ -22,8 +22,12 @@ function Modal(props: ModalProps) {
     <>
       {isDialogOpen && (
         <dialog open={isDialogOpen} onClose={handleClose}>
-          <button onClick={handleClose}>&times;</button>
-          {props.children}
+          <div className="dialog-actions">
+            <button className="close-button" onClick={handleClose}>
+              &times;
+            </button>
+          </div>
+          <div className="dialog-content">{props.children}</div>
         </dialog>
       )}
     </>

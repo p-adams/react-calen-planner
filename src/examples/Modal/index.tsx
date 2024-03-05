@@ -6,7 +6,14 @@ function ModalExample() {
   return (
     <>
       <button onClick={() => setIsOpen(true)}>open</button>
-      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}></Modal>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <form>
+          <label>
+            name
+            <input />
+          </label>
+        </form>
+      </Modal>
     </>
   );
 }
